@@ -110,16 +110,57 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
 
 .box {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+} 
+
+.slider{
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
 }
 
-#portfolio .content {
+.item{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
+  height: 500px;
+  text-align: justify;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  transition: 0.5s;
+  left: calc(50% - 215px);
+  top: 10%;
+}
+
+#next, #prev{
+  position: absolute;
+  top: 40%;
+  color: black;
+  background-color: transparent;
+  border: none;
+  font-size: 3.5rem;
+  left: 50px;
+}
+
+#next{
+  left: unset;
+  right: 50px;
+}
+
+/* #portfolio .content {
   margin-top: 300px;
   padding: 20px;
   background-color: gainsboro;
@@ -132,7 +173,7 @@ section {
 .cards {
   padding: 10px;
   margin: 10px;
-}
+} */
 
 
 /*-------------------------------------------------- Team section --------------------------------------------------*/
