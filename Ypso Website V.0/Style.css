@@ -116,10 +116,11 @@ section {
 
 .portfolio-title {
   padding: 10px;
+  font-size: 25px;
 }
 
 .portfolio-subtitle {
-  width: 50%;
+  width: 40%;
   padding: 10px;
   text-align: justify;
 }
@@ -150,12 +151,38 @@ section {
   width: 570px;
   height: 450px;
   text-align: justify;
-  background-color: gainsboro;
-  border-radius: 10px;
+  justify-content: space-around;
+  background-color: #fcfcf3;
+  border-radius: 30px;
   padding: 20px;
   transition: 0.5s;
   left: calc(50% - 285px);
   top: 10%;
+}
+
+.item-title {
+  display: flex;
+  flex-direction: raw;
+  align-items: center;
+}
+
+.item-title img {
+  margin-right: 10px;
+}
+
+.item-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: justify;
+}
+.item-text p{
+  padding: 10px;
+}
+
+.item a{
+  text-decoration: underline;
+  color: black;
 }
 
 #next, #prev{
@@ -164,7 +191,7 @@ section {
   color: black;
   background-color: transparent;
   border: none;
-  font-size: 3.5rem;
+  font-size: 3rem;
   left: 50px;
 }
 
