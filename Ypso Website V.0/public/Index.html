@@ -129,45 +129,62 @@
     </div>
   </section>
 
-  <!-- Section de contact de la junior -->
-  <section id="contact">
-    <div class="container">
-      <div class="title">
-        <h2>Contact</h2>
-      </div>
-      <div class="emailing">
-        <form action="#">
-          <div class="row">
-            <div class="column">
-              <div class="name">
-                <input type="text" id="name" name="fname" placeholder="Nom">
-              </div>
-              <div class="mail">
-                <input type="text" id="mail" name="lname" placeholder="Email">
-              </div>
-              <div class="subject">
-                <input type="text" id="subject" name="sname" placeholder="Sujet">
-              </div>
-            </div>
-            <div class="column">
-              <div class="content">
-                <textarea id="content" placeholder="Votre demande" rows="5"></textarea>
-              </div>
-            </div>
-          </div>
-          <div class="send">
-            <input type="submit" value="Submit">
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-  
+<!-- Section de contact de la junior -->
+<section id="contact">
+	<div class="container">
+		<div class="text">
+			<h2>Contact</h2>
+		</div>
+		<form action="#">
+			<div class="form-row">
+				<!-- Nom et prénom -->
+				<div class="input-data">
+					<input type="text" required>
+					<div class="underline"></div>
+					<label for="">Nom</label>
+				</div>
+				<div class="input-data">
+					<input type="text" required>
+					<div class="underline"></div>
+					<label for="">Prénom</label>
+				</div>
+			</div>
+			<!-- Email et objet -->
+			<div class="form-row">
+				<div class="input-data">
+					<input type="text" required>
+					<div class="underline"></div>
+					<label for="">Objet</label>
+				</div>
+				<div class="input-data">
+					<input type="text" required>
+					<div class="underline"></div>
+					<label for="">Email</label>
+				</div>
+			</div>
+			<!-- message -->
+			<div class="form-row">
+				<div class="input-data textarea">
+					<textarea cols="80" rows="8" required></textarea>
+					<br>
+					<div class="underline"></div>
+					<label for="">Votre message</label>
+					<br>
+				</div>
+			</div>
+			<!-- button -->
+			<div class="form-row submit-btn">
+				<div class="input-data">
+					<div class="inner"></div>
+					<input type="submit" value="Envoyer">
+				</div>
+			</div>
+		</form>
+	</div>
+</section>
   <!-- Footer avec les partenaire dedans -->
-
   <footer>
     <!---->
   </footer>
-  
 </body>
 </html>
