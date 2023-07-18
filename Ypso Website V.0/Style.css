@@ -112,17 +112,21 @@ section {
   align-items: center;
   height: 100vh;
   justify-content: space-between;
+  background-color: rgba(247,231,221,1);
+  padding: 0;
 }
 
 .portfolio-title {
   padding: 10px;
-  font-size: 25px;
+  font-size: 40px;
+  color: rgba(0,43,142,1);
+  margin-left: -250px;
 }
 
 .portfolio-subtitle {
-  width: 40%;
+  width: 50%;
   padding: 10px;
-  text-align: justify;
+  text-align: right;
 }
 
 .box {
@@ -132,7 +136,7 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+  z-index: 1;
 } 
 
 .slider{
@@ -140,10 +144,10 @@ section {
   width: 100%;
   height: 100%;
   overflow: hidden;
-
 }
 
 .item{
+  color: white;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -152,12 +156,14 @@ section {
   height: 450px;
   text-align: justify;
   justify-content: space-around;
-  background-color: #fcfcf3;
-  border-radius: 30px;
+  border-radius: 30px 30px 0 0;
   padding: 20px;
   transition: 0.5s;
   left: calc(50% - 285px);
   top: 10%;
+  background: rgb(0,43,142);
+  background: linear-gradient(180deg, rgba(0,43,142,1) 0%, rgba(0,43,142,1) 35%, rgba(247,231,221,1) 100%);
+  transition: 0.8s ease;
 }
 
 .item-title {
@@ -171,24 +177,28 @@ section {
 }
 
 .item-text {
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: justify;
+  border-radius: 10px;
 }
 .item-text p{
   padding: 10px;
 }
 
 .item a{
+  margin-top: 30px;
   text-decoration: underline;
-  color: black;
+  color: rgba(0,43,142,1);
+  font-size: 15px;
 }
 
 #next, #prev{
   position: absolute;
   top: 40%;
-  color: black;
+  color: rgba(0,43,142,1);
   background-color: transparent;
   border: none;
   font-size: 3rem;
