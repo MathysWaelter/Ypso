@@ -21,6 +21,7 @@
       <ul class="menu">
         <li><a href="#home">Home</a></li>
         <li><a href="#junior">Junior</a></li>
+        <li><a href="#team">Team</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -83,6 +84,7 @@
     </div>
   </section>
 
+
   <!-- Section de présentation des services de la juniors -->
 
   <section id="services">
@@ -131,7 +133,8 @@
 
 <!-- Section de contact de la junior -->
 <section id="contact">
-	<div class="container">
+  <h1>Contactez-Nous !</h1>
+  <div class="container">
 		<div class="text">
 			<h2>Contact</h2>
 		</div>
@@ -139,25 +142,32 @@
 			<div class="form-row">
 				<!-- Nom et prénom -->
 				<div class="input-data">
-					<input type="text" required>
+					<input type="text" name="last_name" required>
 					<div class="underline"></div>
 					<label for="">Nom</label>
 				</div>
 				<div class="input-data">
-					<input type="text" required>
+					<input type="text" name="first_name" required>
 					<div class="underline"></div>
 					<label for="">Prénom</label>
 				</div>
 			</div>
 			<!-- Email et objet -->
 			<div class="form-row">
+				<div class="input-data select-data">
+          <select name="object" required>
+              <option value="" selected hidden></option>
+              <option value="site_web">Test 1</option>
+              <option value="devis">Test 2</option>
+              <option value="logiciel">Test 3</option>
+              <option value="script">Test 4</option>
+              <option value="autre">Test 5...</option>
+          </select>
+          <div class="underline"></div>
+          <label for="object">Objet</label>
+      </div>
 				<div class="input-data">
-					<input type="text" required>
-					<div class="underline"></div>
-					<label for="">Objet</label>
-				</div>
-				<div class="input-data">
-					<input type="text" required>
+					<input type="text" name="email" required>
 					<div class="underline"></div>
 					<label for="">Email</label>
 				</div>
@@ -165,7 +175,7 @@
 			<!-- message -->
 			<div class="form-row">
 				<div class="input-data textarea">
-					<textarea cols="80" rows="8" required></textarea>
+					<textarea name="message" cols="80" rows="8" required></textarea>
 					<br>
 					<div class="underline"></div>
 					<label for="">Votre message</label>
