@@ -89,7 +89,6 @@ section {
   justify-content: center;
   align-items: center;
 }
-
 #home .title {
   font-size: 84px;
 }
@@ -180,8 +179,143 @@ section {
   font-size: medium;
 }
 
+/*-------------------------------------------------- SERVICES SECTION --------------------------------------------------*/
 
-/*-------------------------------------------------- Contact display --------------------------------------------------*/
+#services {
+  background: linear-gradient(125deg, #e6f7ff 25%, #f2e9d2 50%, #d5e1f2 75%);
+  padding: 60px 0;
+}
+
+.logo-service {
+  width: 150px;
+  height: 150px;
+}
+
+.section_title h2 {
+  font-family: 'GFS Didot', serif;
+  color: #132e8a;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  text-align: center;
+
+}
+
+.brand_border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand_border .left-line {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 30%;
+  background: #132e8a;
+}
+
+.brand_border .right-line {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 30%;
+  background: #132e8a;
+}
+
+.section_title p {
+  color: #333333;
+  font-size: 18px;
+  line-height: 25px;
+  padding: 54px 19%;
+  text-align: justify;
+  margin-top: 10px;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.service {
+  margin: 40px 30px;
+  overflow: hidden;
+  background-color: rgb(243, 243, 230);
+  padding: 35px 15px;
+  position: relative;
+  text-align: center;
+  transition: background-color 0.3s ease-in,
+              transform .3s ease-in;
+  width: 300px;
+  border: 3px solid #132e8a;
+  transform: rotate(-5deg);
+}
+
+/* Style des services en position paire pour une rotation inverse */
+.service:nth-child(even) {
+  transform: rotate(5deg);
+}
+
+.service:hover {
+  background-color: #132e8a;
+  transform: translateY(-10px) rotate(0deg);
+  border: none;
+}
+
+.service:hover::before {
+  right: 0;
+  top: 0;
+}
+
+.service > i {
+  display: block;
+  color: #132e8a;
+  font-size: 4rem;
+  margin-bottom: 0.9rem;
+  transition: color 0.3s ease-out;
+}
+
+.service > .title {
+  font-weight: 900;
+  font-size: 1.2rem;
+  line-height: 1.56rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  transition: color 0.3s ease-out;
+}
+
+.service > .description {
+  line-height: 1.56rem;
+  margin: 0;
+  transition: color 0.3s ease-out;
+}
+
+.service:hover > i,
+.service:hover > .title,
+.service:hover > .description {
+  color: #FFF;
+}
+
+.scroll-arrow {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.scroll-arrow a {
+  font-size: 44px;
+  color: #132e8a;
+  transition: color 0.3s;
+}
+
+.scroll-arrow a:hover {
+  color: beige;
+}
+
+/*-------------------------------------------------- CONTACT SECTION --------------------------------------------------*/
 
 /* Section contact */
 #contact {
@@ -231,12 +365,11 @@ section {
   background-color: #fff;
   width: 800px;
   padding: 25px 40px 10px 40px;
-  box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.4), /* Lueur blanche */
-              0px 0px 12px 2px rgba(255, 255, 255, 0.3), /* Lueur blanche */
-              0px 0px 18px 4px rgba(255, 255, 255, 0.2); /* Lueur blanche */
+  box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.4),
+              0px 0px 12px 2px rgba(255, 255, 255, 0.3),
+              0px 0px 18px 4px rgba(255, 255, 255, 0.2);
   border-radius: 2% 15%;
 }
-
 
 .container .text h2 {
   text-align: center;
