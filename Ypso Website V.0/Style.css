@@ -25,6 +25,7 @@ nav {
   justify-content: flex-end;
   width: 100%;
   padding: 10px 10px 10px 10px;
+  z-index: 1;
 }
 
 nav ul {
@@ -114,19 +115,34 @@ section {
   justify-content: space-between;
   background-color: rgb(0,43,142);
   padding: 0;
+  position: relative;
 }
 
+.background-logo{
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 650px;  
+  height: 650px;
+  transform: translate(-350px);
+  opacity: 0.1;
+  background-image: url(./Assets/logo-ypso.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 .portfolio-title {
+  margin-top: 2%;
+  transform: translate(-50%);
   padding: 10px;
-  font-size: 40px;
+  font-size: 50px;
   color: rgba(247,231,221,1);
   margin-left: -250px;
 }
 
 .portfolio-subtitle {
-  width: 50%;
+  width: 500px;
   padding: 10px;
-  text-align: right;
+  text-align: justify;
   color: rgba(247,231,221,1);
 }
 
@@ -148,31 +164,71 @@ section {
 }
 
 .item{
-  color: white;
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 570px;
-  height: 450px;
+  width: 500px;
+  height: 500px;
   text-align: justify;
   justify-content: space-around;
-  border-radius: 30px 30px 0 0;
+  border-radius: 50%;
   padding: 20px;
-  transition: 0.5s;
-  left: calc(50% - 285px);
+  left: calc(60% - 370px);
   top: 10%;
-  background: rgb(0,43,142);
-  background: linear-gradient(180deg, rgba(247,231,221,1) 0%, rgba(247,231,221,1) 75%, rgba(0,43,142,1) 100%);
   transition: 0.8s ease;
+  background-size: cover;
+  overflow: visible;
 }
 
+.item1{
+  background-image: url(./Assets/web-design.jpg);
+}
+.item2 {
+  background-image: url(./Assets/portfolio_actual.jpg);
+}
+.item:hover {
+  background-color: rgb(48, 108, 247);
+  background-image: none;
+  transition: none;
+}
+.item2::before{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.item3 {
+  background-image: url(./Assets/background-dashboard.jpg);
+}
+.item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+}
 
 .item-title {
+  visibility: visible;
   display: flex;
   flex-direction: raw;
   align-items: center;
-  color: rgb(0,43,142);
+  color: rgba(247,231,221,1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 50px;
+  transform: translateX(30px);
+}
+.item:hover .item-title{
+  right: 100px;
+  transition: 0.7s ease;
+}
+.item .item-title{
+
+  transition: 0.5s ease;
 }
 
 .item-title img {
@@ -180,18 +236,23 @@ section {
 }
 
 .item-text {
-  margin-top: 30px;
+  margin-top: 75px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   text-align: justify;
   border-radius: 10px;
-  color: rgb(0,43,142);
+  color: rgba(247,231,221,1);
+  width: 75%;
+  visibility: hidden;
+}
+.item:hover .item-text{
+  visibility: visible;
 }
 .item-text p{
   padding: 10px;
 }
-
 .item a{
   margin-top: 30px;
   text-decoration: underline;
@@ -199,15 +260,38 @@ section {
   font-size: 15px;
 }
 
+.direction_arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(0,43,142);
+  background-color: rgba(247,231,221,1);
+  width: 30px;
+  height: 30px;
+  font-size: 1.5rem;
+  transition: 0.4s ease;
+  border: none;
+}
+
+.direction_arrows:hover {
+  color: rgba(247,231,221,1);
+  background-color: rgb(0,43,142);
+  width: 35px;
+  height: 35px;
+  font-size: 1.8rem;
+  border: 0.5px solid rgba(247,231,221,1);
+}
+
+
+
+
 #next, #prev{
   position: absolute;
   top: 40%;
-  color: rgba(247,231,221,1);
-  background-color: transparent;
-  border: none;
-  font-size: 3rem;
+  border-radius: 50%;
   left: 50px;
 }
+
 
 #next{
   left: unset;

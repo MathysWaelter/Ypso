@@ -1,195 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Ressource exterieur -->
+    <!-- Ressource exterieur -->
 
-  <link rel="stylesheet" href="./Style.css">
-  <script src="./Script.js"></script>
-  <link rel="icon" href="https://img.icons8.com/color/48/leaf.png" type="image/png">
+    <link rel="stylesheet" href="./Style.css" />
+    <script src="./Script.js"></script>
+    <link
+      rel="icon"
+      href="https://img.icons8.com/color/48/leaf.png"
+      type="image/png"
+    />
 
-  <title>Ypso V.2</title>
-</head>
-<body>
-  <header>
+    <title>Ypso V.2</title>
+  </head>
+  <body>
+    <header>
+      <!-- Navbar -->
 
-    <!-- Navbar -->
+      <nav>
+        <ul class="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#junior">Junior</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a id="menu-icon-link" href="#">
+          <svg
+            id="menu-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            width="60"
+            height="60"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M4 17H8M12 17H20M4 12H20M4 7H12M16 7H20"
+                stroke="#000000"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </g>
+          </svg>
+        </a>
+      </nav>
+    </header>
 
-    <nav>
-      <ul class="menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#junior">Junior</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <a id="menu-icon-link" href="#">
-        <svg id="menu-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-          <g id="SVGRepo_iconCarrier">
-            <path d="M4 17H8M12 17H20M4 12H20M4 7H12M16 7H20" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-          </g>
-        </svg>
-      </a>
-    </nav>
-  </header>
+    <!-- Section de la page d'acceuil -->
 
-<!-- Section de la page d'acceuil -->
-
-  <section id="home">
-    <div class="title">
-      <h1>YPSO</h1>
-      <h2>By Holberton</h2>
-    </div>   
-  </section>
-
-  <!-- Section de présentation de la junior entreprise -->
-
-  <section id="junior">
-    <div class="column">
-      <h2>La<br>Junior<br>Entreprise</h2>
-    </div>
-    <div class="column right-column">
-      <p>Découvrez la Junior Entreprise de l'école Holberton School France, spécialisée dans la digitalisation web écoresponsable. Notre équipe d'étudiants talentueux offre des services professionnels de conception et développement de sites web, tout en minimisant notre impact environnemental. Nous optimisons le code et nous contribuons à la préservation de l'environnement. Bénéficiez de solutions numériques efficaces pour votre entreprise. Contactez-nous dès aujourd'hui pour en savoir plus sur notre approche écoresponsable.</p>
-    </div>
-  </section>
-
-  <!-- Section de présentation du bureau -->
-
-  <section id="team">
-    <div class="team-title">
-      <h2>L'équipe</h2>
-    </div>
-    <div class="thumbnail-container">
-      <div class="thumbnail">
-        <img src="./Assets/Picture.png" alt="Image 1">
-        <h2>Président</h2>
+    <section id="home">
+      <div class="title">
+        <h1>YPSO</h1>
+        <h2>By Holberton</h2>
       </div>
-      <div class="thumbnail">
-        <img src="./Assets/Picture.png" alt="Image 2">
-        <h2>Vice-Président</h2>
+    </section>
+
+    <!-- Section de présentation de la junior entreprise -->
+
+    <section id="junior">
+      <div class="column">
+        <h2>La<br />Junior<br />Entreprise</h2>
       </div>
-      <div class="thumbnail">
-        <img src="./Assets/Picture.png" alt="Image 3">
-        <h2>Secrétaire Générale</h2>
+      <div class="column right-column">
+        <p>
+          Découvrez la Junior Entreprise de l'école Holberton School France,
+          spécialisée dans la digitalisation web écoresponsable. Notre équipe
+          d'étudiants talentueux offre des services professionnels de conception
+          et développement de sites web, tout en minimisant notre impact
+          environnemental. Nous optimisons le code et nous contribuons à la
+          préservation de l'environnement. Bénéficiez de solutions numériques
+          efficaces pour votre entreprise. Contactez-nous dès aujourd'hui pour
+          en savoir plus sur notre approche écoresponsable.
+        </p>
       </div>
-      <div class="thumbnail">
-        <img src="./Assets/Picture.png" alt="Image 4">
-        <h2>Trésorier</h2>
+    </section>
+
+    <!-- Section de présentation du bureau -->
+
+    <section id="team">
+      <div class="team-title">
+        <h2>L'équipe</h2>
       </div>
-    </div>
-  </section>
+      <div class="thumbnail-container">
+        <div class="thumbnail">
+          <img src="./Assets/Picture.png" alt="Image 1" />
+          <h2>Président</h2>
+        </div>
+        <div class="thumbnail">
+          <img src="./Assets/Picture.png" alt="Image 2" />
+          <h2>Vice-Président</h2>
+        </div>
+        <div class="thumbnail">
+          <img src="./Assets/Picture.png" alt="Image 3" />
+          <h2>Secrétaire Générale</h2>
+        </div>
+        <div class="thumbnail">
+          <img src="./Assets/Picture.png" alt="Image 4" />
+          <h2>Trésorier</h2>
+        </div>
+      </div>
+    </section>
 
-  <!-- Section de présentation des services de la juniors -->
+    <!-- Section de présentation des services de la juniors -->
 
-  <section id="services">
-    <h2>Services</h2>
-  </section>
+    <section id="services">
+      <h2>Services</h2>
+    </section>
 
-  <!-- Section de présentation du portfolio de la junior -->
+    <!-- Section de présentation du portfolio de la junior -->
 
-  <section id="portfolio">
-
+    <section id="portfolio">
+      <div class="background-logo"></div>
       <div class="portfolio-title">
         <h2>Portfolio</h2>
       </div>
       <div class="portfolio-subtitle">
-        <p>Découvrez nos créations éco-conçues, fruit du savoir-faire de notre Junior Entreprise en développement web. Performance, fonctionnalité et responsabilité environnementale sont au cœur de chaque projet que nous réalisons.
-        </p> 
-      </div>  
-      
+        <p>
+          Découvrez nos créations éco-conçues, fruit du savoir-faire de notre
+          Junior Entreprise en développement web. Performance, fonctionnalité et
+          responsabilité environnementale sont au cœur de chaque projet que nous
+          réalisons.
+        </p>
+      </div>
+
       <!-- Caroussel -->
-      <div class="box">   
+      <div class="box">
         <div class="slider">
-          <div class="item">
+          <div class="item item1">
             <div class="item-title">
-              <img src="/Ypso Website V.0/Assets/logoPortfolio1.png" alt="" width="40px" height="40px">
+              <img
+                src="/Ypso Website V.0/Assets/logoPortfolio1.png"
+                alt=""
+                width="40px"
+                height="40px"
+              />
               <h3>GreenEcom</h3>
             </div>
             <div class="item-text">
-            <p><strong>Mission</strong> : Développer une application de commerce électronique éco-responsable mettant en avant des produits respectueux de l'environnement.</p>
-            <p><strong>Technologies utilisées</strong> : HTML5, CSS3, JavaScript.</p>
-            <p><strong>Objectifs</strong> : Créer une interface utilisateur réactive et attrayante, intégrer des fonctionnalités avancées de recherche et de filtrage pour faciliter la découverte de produits écologiques.</p>
-            <p>
-            <strong>Résultat</strong> : Une plateforme conviviale et intuitive permettant aux utilisateurs de soutenir la durabilité en effectuant des achats responsables.</p>
+              <p>
+                <strong>Mission</strong> : Développer une application de
+                commerce électronique éco-responsable mettant en avant des
+                produits respectueux de l'environnement.
+              </p>
+              <p>
+                <strong>Technologies utilisées</strong> : HTML5, CSS3,
+                JavaScript.
+              </p>
+              <p>
+                <strong>Objectifs</strong> : Créer une interface utilisateur
+                réactive et attrayante, intégrer des fonctionnalités avancées de
+                recherche et de filtrage pour faciliter la découverte de
+                produits écologiques.
+              </p>
+              <p>
+                <strong>Résultat</strong> : Une plateforme conviviale et
+                intuitive permettant aux utilisateurs de soutenir la durabilité
+                en effectuant des achats responsables.
+              </p>
             </div>
             <a href="">www.greenecom.fake</a>
           </div>
-          <div class="item">
-            <div class="item-title">
-              <img src="/Ypso Website V.0/Assets/logoPortfolio2.png" alt="" width="60px" height="60px">
-              <h3>Bird</h3>
+          <div class="item item2">
+            <div class="item-content">
+              <div class="item-title">
+                <img
+                  src="/Ypso Website V.0/Assets/logo-actual.png"
+                  alt=""
+                  width="60px"
+                  height="60px"
+                />
+                <h3>Actual</h3>
+              </div>
+              <div class="item-text">
+                <p>
+                  <strong>Mission</strong> : Réduire l'empreinte carbone du site
+                  web d'une entreprise.
+                </p>
+                <p>
+                  <strong>Technologies utilisées</strong> : HTML, CSS,
+                  JavaScript, optimisation des ressources.
+                </p>
+                <p>
+                  <strong>Objectifs</strong> : Optimiser le code, les images et
+                  les ressources du site web pour réduire la consommation
+                  d'énergie et les émissions de CO2.
+                </p>
+                <p>
+                  <strong>Résultat</strong> : Un site web plus rapide et
+                  écoénergétique qui contribue à la réduction de l'empreinte
+                  carbone de l'entreprise, offrant ainsi une expérience
+                  utilisateur améliorée.
+                </p>
+              </div>
+              <a href="">www.actual.fr</a>
             </div>
-            <div class="item-text">
-            <p><strong>Mission</strong> : Réduire l'empreinte carbone du site web d'une entreprise.</p>
-            <p><strong>Technologies utilisées</strong> : HTML, CSS, JavaScript, optimisation des ressources.</p>
-            <p><strong>Objectifs</strong> : Optimiser le code, les images et les ressources du site web pour réduire la consommation d'énergie et les émissions de CO2.</p>
-            <p>
-            <strong>Résultat</strong> : Un site web plus rapide et écoénergétique qui contribue à la réduction de l'empreinte carbone de l'entreprise, offrant ainsi une expérience utilisateur améliorée.</p>
-            </div>
-            <a href="">www.bird.fake</a>
           </div>
-          <div class="item">
+          <div class="item item3">
             <div class="item-title">
-              <img src="/Ypso Website V.0/Assets/logoPortfolio3.png" alt="" width="40px" height="40px">
+              <img
+                src="/Ypso Website V.0/Assets/logoPortfolio3.png"
+                alt=""
+                width="40px"
+                height="40px"
+              />
               <h3>InnoWeb</h3>
             </div>
             <div class="item-text">
-            <p><strong>Mission</strong> : Concevoir un site web innovant et captivant pour une entreprise à la recherche d'une présence en ligne.</p>
-            <p><strong>Technologies utilisées</strong> : HTML5, CSS3, JavaScript, NodeJs, SQLite.</p>
-            <p><strong>Objectifs</strong> : Créer une identité visuelle originale, développer une interface utilisateur intuitive et moderne, optimiser les performances du site web et assurer une compatibilité multiplateforme.</p>
-            <p><strong>Résultat</strong> : Un site web dynamique et attractif qui renforce l'image de marque de l'entreprise, engage les utilisateurs et favorise une expérience en ligne marquante.</p>
+              <p>
+                <strong>Mission</strong> : Concevoir un site web innovant et
+                captivant pour une entreprise à la recherche d'une présence en
+                ligne.
+              </p>
+              <p>
+                <strong>Technologies utilisées</strong> : HTML5, CSS3,
+                JavaScript, NodeJs, SQLite.
+              </p>
+              <p>
+                <strong>Objectifs</strong> : Créer une identité visuelle
+                originale, développer une interface utilisateur intuitive et
+                moderne, optimiser les performances du site web et assurer une
+                compatibilité multiplateforme.
+              </p>
+              <p>
+                <strong>Résultat</strong> : Un site web dynamique et attractif
+                qui renforce l'image de marque de l'entreprise, engage les
+                utilisateurs et favorise une expérience en ligne marquante.
+              </p>
             </div>
             <a href="">www.innoweb.fake</a>
           </div>
-          <button id="prev"><</button>
-          <button id="next">></button>  
+          <button id="prev" class="direction_arrows"><</button>
+          <button id="next" class="direction_arrows">></button>
         </div>
       </div>
-  </section>
+    </section>
 
-  <!-- Section de contact de la junior -->
-  <section id="contact">
-    <div class="container">
-      <div class="title">
-        <h2>Contact</h2>
-      </div>
-      <div class="emailing">
-        <form action="#">
-          <div class="row">
-            <div class="column">
-              <div class="name">
-                <input type="text" id="name" name="fname" placeholder="Nom">
+    <!-- Section de contact de la junior -->
+    <section id="contact">
+      <div class="container">
+        <div class="title">
+          <h2>Contact</h2>
+        </div>
+        <div class="emailing">
+          <form action="#">
+            <div class="row">
+              <div class="column">
+                <div class="name">
+                  <input type="text" id="name" name="fname" placeholder="Nom" />
+                </div>
+                <div class="mail">
+                  <input
+                    type="text"
+                    id="mail"
+                    name="lname"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="subject">
+                  <input
+                    type="text"
+                    id="subject"
+                    name="sname"
+                    placeholder="Sujet"
+                  />
+                </div>
               </div>
-              <div class="mail">
-                <input type="text" id="mail" name="lname" placeholder="Email">
-              </div>
-              <div class="subject">
-                <input type="text" id="subject" name="sname" placeholder="Sujet">
+              <div class="column">
+                <div class="content">
+                  <textarea
+                    id="content"
+                    placeholder="Votre demande"
+                    rows="5"
+                  ></textarea>
+                </div>
               </div>
             </div>
-            <div class="column">
-              <div class="content">
-                <textarea id="content" placeholder="Votre demande" rows="5"></textarea>
-              </div>
+            <div class="send">
+              <input type="submit" value="Submit" />
             </div>
-          </div>
-          <div class="send">
-            <input type="submit" value="Submit">
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
-    </div>
-  </section>
-  
-  <!-- Footer avec les partenaire dedans -->
+    </section>
 
-  <footer>
-    <!---->
-  </footer>
-  
-</body>
+    <!-- Footer avec les partenaire dedans -->
+
+    <footer>
+      <!---->
+    </footer>
+  </body>
 </html>
