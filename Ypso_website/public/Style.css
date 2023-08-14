@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lexend', sans-serif;
+  background-color: RGBA(225, 247, 238, 1.0);
+  overflow-x: hidden;
+}
+
+/*-------------------------------------------------- Navigation bar --------------------------------------------------*/
+
+nav { 
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  margin-right: 10px;
+  padding-top: 18px;
+}
+
+nav ul li {
+  display: inline;
+  margin: 10px;
+  background: white;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 0px grey;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+nav ul li:hover {
+  background: #F5EDE5;
+}
+
+nav ul li:active {
+  transform: translateY(3px);
+  box-shadow: none;
+  background-color: #F5EDE5;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.menu {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0s ease 0.6s;
+}
+
+.menu.show {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+/*-------------------------------------------------- Gloabl section --------------------------------------------------*/
+
+section {
+  padding-top: 30px;
+  padding: 20px;
+  width: 100%;
+  height: 100vh;
+}
+
+/*-------------------------------------------------- Home section --------------------------------------------------*/
+
+#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home .title {
+  font-size: 84px;
+}
+
+/*-------------------------------------------------- Junior section --------------------------------------------------*/
+
+#junior {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#junior h2 {
+  font-size: 48px;
+}
+
+/*-------------------------------------------------- Portfolio section --------------------------------------------------*/
+
+#portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#portfolio .content {
+  margin-top: 300px;
+  padding: 20px;
+  background-color: gainsboro;
+  border-radius: 10px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cards {
+  padding: 10px;
+  margin: 10px;
+}
+
+
+/*-------------------------------------------------- Team section --------------------------------------------------*/
+
+#team {
+  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-title {
+  margin-bottom: 10px;
+}
+
+.thumbnail-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+}
+
+.thumbnail {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumbnail img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.thumbnail h2 {
+  padding-top: 8px;
+  font-size: medium;
+}
+
+/*-------------------------------------------------- Contact display --------------------------------------------------*/
+
+#contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emailing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.emailing, .name, .mail, .content, .send {
+  padding: 5px;
+}
+
+input, textarea {
+  border: 0;
+  outline: 0;
+  border-radius: 6px;
+  padding: 0.5em;
+  max-width: 300px;
+  width: 300px;
+  background-color: gainsboro;
+}
+
+textarea {
+  resize: none;
+}
+
+form .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.content {
+  margin-top: 10px;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+
+
+/*-------------------------------------------------- Column display --------------------------------------------------*/
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cright-column {
+  padding: 20px;
+  text-align: center;
+}
+
+/*-------------------------------------------------- Footer display --------------------------------------------------*/
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
