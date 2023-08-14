@@ -4,7 +4,7 @@
   "description": "Website",
   "main": "index.js",
   "scripts": {
-    "build:digitalocean": "npm install --production=false && npm run build && npm ci",
+    "build:digitalocean": "npm install --production=false && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cp Ypso_website/public/* ."
   },
