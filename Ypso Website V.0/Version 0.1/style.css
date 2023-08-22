@@ -24,14 +24,10 @@
   /* Colors */
   --color-primary: #132e8a;
   --color-secondary: #333333;
-  --color-third: rgb(178, 189, 212);
+  --color-third: rgba(247,231,221,1);
 
-  /* Backgrounds */
-  --color-bg: RGBA(225, 247, 238, 1.0);
-  --color-hover: #F5EDE5;
-  
-  /* Box Shadows */
-  --box-shadow-primary: 3px 3px 0px grey;
+  /* Backgrounds & hover */
+  --color-arrow: lightcoral;
 }
 
 h1, h2, h3, h4, h5, h6, p, span, i {
@@ -123,6 +119,158 @@ nav ul li a {
 ************************************  HOME SECTION  ************************************
 ***************************************************************************************/
 
+
+#home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(
+      95deg , 
+      var(--color-primary) 0%,
+      var(--color-primary) 50%,
+      var(--color-third) 50%, 
+      var(--color-third) 100%
+  );
+}
+
+.slider-wrapper {
+  font-size: 60px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: var(--font-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.slider {
+  height: 80px;
+  padding-left: 20px;
+  overflow: hidden;
+}
+
+.slider div {
+  color: #fff;
+  height: 80px;
+  margin-bottom: 80px;
+  padding: 2px 20px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 50px;
+}
+
+.slider-text1 {
+  background: lightgreen;
+  animation: slide 6s linear infinite;
+}
+
+.slider-text2 {
+  background: skyblue;
+}
+
+.slider-text3 {
+  background: lightcoral;
+}
+
+@keyframes slide {
+  0% {margin-top: -480px;}
+  5% {margin-top: -320px;}
+  33% {margin-top: -320px;}
+  38% {margin-top: -160px;}
+  66% {margin-top: -160px;}
+  71% {margin-top: 0px;}
+  100% {margin-top: 0px;}
+}
+
+#home img {
+  width: 40%;
+  height: 85%;
+  position: absolute;
+  z-index: 0;
+  top: -70px;
+  left: 0px;
+}
+
+.roundshape{
+  width: 300px;
+  height: 300px;
+  background-color: rgba(12, 52, 148, 0.8);
+  position: absolute;
+  left: 90%;
+  bottom: 80%;
+  border-radius: 50%;
+  transition: background-color 1s ease-out;
+}
+
+.roundshape:hover {
+  background-color: var(--color-primary);
+}
+
+#home .title-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px;
+  font-size: 11vw;
+  color: rgb(0,43,142);
+  width: 600px;
+  font-family: var(--font-secondary);
+}
+
+#home h2 {
+  font-size: 80px;
+}
+
+#home .title-home span {
+  color: var(--color-third);
+  margin-right: 20px;
+}
+
+#home .title-home p {
+  color: var(--color-primary);
+  font-size: 25px;
+  text-align: right;
+  width: 100%;
+  background-color: var(--color-primary);
+  padding: 5px;
+  border-radius: 10px;
+  transition: background-color 2s ease-out;
+}
+
+#home .title-home p:hover {
+  background-color: rgba(48, 108, 247, 0.8);
+}
+
+#home .subtitle-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
+#home .list{
+  font-family: var(--font-secondary);
+  margin-top: 75px;
+  display: flex;
+  color: var(--color-primary);
+  font-size: 20px;
+}
+
+#home .list span{
+  color: rgba(247,231,221,1);
+}
+
+#home .list li{
+  padding: 30px;
+  width: 200px;
+  text-align: center;
+}
 
 
 /***************************************************************************************
@@ -251,7 +399,7 @@ nav ul li a {
 }
 
 .scroll-arrow-junior a:hover {
-  color: var(--color-third);
+  color: var(--color-arrow);
 }
 
 
@@ -450,7 +598,7 @@ nav ul li a {
 }
 
 .scroll-arrow-team a:hover {
-  color: var(--color-third);
+  color: var(--color-arrow);
 }
 
 
@@ -606,7 +754,7 @@ nav ul li a {
 }
 
 .scroll-arrow-part a:hover {
-  color: var(--color-third);
+  color: var(--color-arrow);
 }
 
 
@@ -752,7 +900,7 @@ nav ul li a {
 }
 
 .scroll-arrow-services a:hover {
-  color: var(--color-third);
+  color: var(--color-arrow);
 }
 
 
