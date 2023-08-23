@@ -26,6 +26,7 @@
   </head>
   <body>
     <header>
+
       <!--------------------------------------------------------------------------------------
       --------------------------------------- NAVBAR -----------------------------------------
       --------------------------------------------------------------------------------------->
@@ -99,6 +100,7 @@
       </div>
     </section>
 
+
     <!--------------------------------------------------------------------------------------
     ---------------------------------- SECTION JUNIOR --------------------------------------
     --------------------------------------------------------------------------------------->
@@ -161,6 +163,7 @@
       </div>
     </section>
 
+
     <!--------------------------------------------------------------------------------------
     ------------------------------------ SECTION TEAM --------------------------------------
     --------------------------------------------------------------------------------------->
@@ -213,7 +216,7 @@
         <!-- Individual member bubble -->
 
         <!-- Mathieu Morel Card Information -->
-        <div class="bubble"
+        <div id="matt" class="bubble"
           style="background-image: url('../Version\ 0.1/Assets/profil/Mathieu_Morel.jpeg');"
           data-member="Mathieu Morel"
           data-image="../Version\ 0.1/Assets/profil/Mathieu_Morel.jpeg"
@@ -293,6 +296,7 @@
       </div>
     </section>
 
+
     <!--------------------------------------------------------------------------------------
     --------------------------------- SECTION PARTENAIRES ----------------------------------
     --------------------------------------------------------------------------------------->
@@ -304,8 +308,8 @@
 
       <!-- Group of partner logos/images -->
       <div class="group">
-        <!-- Partner item - Groupe Actual -->
 
+        <!-- Partner item - Groupe Actual -->
         <div class="item-partner item-partner2">
             <a href="https://www.groupeactual.eu" class="partner-link" target="_blank"></a>
             <div class="item-bg" style="background-image: url(https://uploads-ssl.webflow.com/64107f65f30b69371e3d6bfa/642163245993ba33ee2f10ff_Groupe_Actual.jpg)"></div>
@@ -313,12 +317,12 @@
 
         <!-- Partner item - Holberton School -->
         <div class="item-partner">
-            <a href="https://www.holbertonschool.fr" class="partner-link2" target="_blank"></a>
+            <a href="https://www.holbertonschool.fr" class="partner-link" target="_blank"></a>
             <div class="item-bg" style="background-image: url(https://uploads-ssl.webflow.com/64107f65f30b69371e3d6bfa/6480d9b63a806a1b35fec007_Holberton.png)"></div>
         </div>
       </div>
 
-      <!-- Paragraphe in collaboration  -->
+      <!-- Paragraph in collaboration  -->
       <p class="quote">
         Nous sommes fiers de collaborer avec ces entreprises qui partagent notre
         vision et nos valeurs.
@@ -337,10 +341,13 @@
     --------------------------------------------------------------------------------------->
 
     <section id="portfolio">
-      <div class="background-logo"></div>
+
+      <!-- Title of the section -->
       <div class="portfolio-title">
         <h2>Portfolio</h2>
       </div>
+
+      <!-- Subtitle of the section -->
       <div class="portfolio-subtitle">
         <p>
           Découvrez nos créations éco-conçues, fruit du savoir-faire de notre
@@ -350,17 +357,15 @@
         </p>
       </div>
 
-      <!-- Caroussel -->
+      <!-- Container of the elements -->
       <div class="portfolio-box">
+
+        <!-- Portfolio slider -->
         <div class="portfolio-slider">
+
+          <!-- Portfolio item 1 -->
           <div class="portfolio-item portfolio-item1">
             <div class="portfolio-item-title">
-              <img
-                src="./Assets/portfolio_pictures/logoPortfolio1.png"
-                alt=""
-                width="40px"
-                height="40px"
-              />
               <h3>GreenEcom</h3>
             </div>
             <div class="portfolio-item-text">
@@ -380,13 +385,13 @@
                 produits écologiques.
               </p>
               <p>
-                <strong>Résultat</strong> : Une plateforme conviviale et
-                intuitive permettant aux utilisateurs de soutenir la durabilité
-                en effectuant des achats responsables.
+                <strong>Participants</strong> : Mathieu, Benjamin, Mathys, Caroline, Quentin, Cassandra.
               </p>
             </div>
             <a href="">www.greenecom.fake</a>
           </div>
+
+          <!-- Portfolio item 2 -->
           <div class="portfolio-item portfolio-item2">
             <div class="portfolio-item-content">
               <div class="portfolio-item-title">
@@ -413,15 +418,14 @@
                   d'énergie et les émissions de CO2.
                 </p>
                 <p>
-                  <strong>Résultat</strong> : Un site web plus rapide et
-                  écoénergétique qui contribue à la réduction de l'empreinte
-                  carbone de l'entreprise, offrant ainsi une expérience
-                  utilisateur améliorée.
+                  <strong>Participants</strong> : Mathieu, Benjamin, Mathys, Caroline, Quentin, Cassandra.
                 </p>
               </div>
               <a href="">www.actual.fr</a>
             </div>
           </div>
+
+          <!-- Portfolio item 3 -->
           <div class="portfolio-item portfolio-item3">
             <div class="portfolio-item-title">
               <img
@@ -449,22 +453,30 @@
                 compatibilité multiplateforme.
               </p>
               <p>
-                <strong>Résultat</strong> : Un site web dynamique et attractif
-                qui renforce l'image de marque de l'entreprise, engage les
-                utilisateurs et favorise une expérience en ligne marquante.
+                <strong>Participants</strong> : Mathieu, Benjamin, Mathys, Caroline, Quentin, Cassandra.
               </p>
             </div>
             <a href="">www.innoweb.fake</a>
           </div>
+
+          <!-- Slider navigation arrows -->
           <button id="portfolio-prev" class="portfolio-direction_arrows">
-            <
+            <i class="fa fa-chevron-left"></i>
           </button>
           <button id="portfolio-next" class="portfolio-direction_arrows">
-            >
+            <i class="fa fa-chevron-right"></i>
           </button>
         </div>
       </div>
+
+      <!-- Scroll arrow to navigate to the next section -->
+      <div class="scroll-arrow-portfolio">
+        <a href="#services" title="Scroll to next section">
+          <i class="fa fa-chevron-down"></i>
+        </a>
+      </div>
     </section>
+
 
     <!--------------------------------------------------------------------------------------
     --------------------------------- SECTION SERVICES -------------------------------------
@@ -531,6 +543,7 @@
         </a>
       </div>
     </section>
+
 
     <!--------------------------------------------------------------------------------------
     --------------------------------- SECTION CONTACT --------------------------------------
