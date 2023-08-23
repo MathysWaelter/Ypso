@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&family=Libre+Baskerville:wght@400;700&display=swap');
 
 @font-face {
   font-family: 'Prototype';
@@ -160,7 +161,7 @@ nav ul li a {
   padding: 2px 20px;
   text-align: center;
   box-sizing: border-box;
-  border-radius: 50px;
+
 }
 
 .slider-text1 {
@@ -200,8 +201,8 @@ nav ul li a {
   height: 300px;
   background-color: rgba(12, 52, 148, 0.8);
   position: absolute;
-  left: 90%;
-  bottom: 80%;
+  left: 92%;
+  bottom: 85%;
   border-radius: 50%;
   transition: background-color 1s ease-out;
 }
@@ -215,10 +216,10 @@ nav ul li a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: 35px;
   padding-top: 150px;
   font-size: 11vw;
-  color: rgb(0,43,142);
-  width: 600px;
+  color: var(--color-primary);
   font-family: var(--font-secondary);
 }
 
@@ -272,6 +273,26 @@ nav ul li a {
   text-align: center;
 }
 
+/* Scroll Arrow */
+.scroll-arrow-home {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+}
+
+.scroll-arrow-home a {
+  display: block;
+  font-size: 44px;
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.scroll-arrow-home a:hover {
+  color: var(--color-arrow);
+}
+
 
 /***************************************************************************************
 ***********************************  JUNIOR SECTION  ***********************************
@@ -287,6 +308,14 @@ nav ul li a {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   padding: 60px 0;
+  background:
+    linear-gradient(
+      85deg , 
+      var(--color-primary) 0%,
+      var(--color-primary) 50%,
+      var(--color-third) 50%, 
+      var(--color-third) 100%
+  );
 }
 
 /* Counters Section */
@@ -309,17 +338,34 @@ nav ul li a {
   padding-bottom: 20px;
 }
 
-.counter-number {
+.counter-number-left,
+.counter-number-right {
   font-size: 2.4vw;
   font-weight: 700;
+}
+
+.counter-number-left {
+  color: var(--color-third);
+}
+
+.counter-number-right {
   color: var(--color-primary);
 }
 
-.counter-label {
+.counter-label-left,
+.counter-label-right {
   font-size: 1vw;
-  color: var(--color-secondary);
   margin-top: 10px;
 }
+
+.counter-label-left {
+  color: var(--color-third);
+}
+
+.counter-label-right {
+  color: var(--color-primary);
+}
+
 
 /* Left Column */
 .column {
@@ -340,12 +386,12 @@ nav ul li a {
 
 .column, .right-column {
   flex: 1;
-  padding: 0 45px; 
+  padding: 0 45px;
 }
 
 .typing-effect {
   font-family: var(--font-secondary);
-  color: var(--color-primary);
+  color: var(--color-third);
   font-size: 5.6vw;
   font-weight: 700;
   letter-spacing: 1.8px;
@@ -356,7 +402,7 @@ nav ul li a {
 
 .typing-effect-2 {
   font-family: var(--font-secondary);
-  color: var(--color-primary);
+  color: var(--color-third);
   font-size: 2vw;
 }
 
@@ -372,14 +418,13 @@ nav ul li a {
 
 /* Logo Image */
 .logo-junior {
-  width: 100%; 
+  width: 50%; 
   height: 890px; 
   position: absolute; 
-  z-index: 1; 
-  top: 60%; 
+  top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%); 
-  opacity: 0.1;
+  transform: translate(-50%, -50%);
+  opacity: 0.2;
 }
 
 /* Scroll Arrow */
@@ -394,7 +439,7 @@ nav ul li a {
 .scroll-arrow-junior a {
   display: block;
   font-size: 44px;
-  color: var(--color-primary);
+  color: var(--color-third);
   transition: all 0.3s ease;
 }
 
@@ -412,13 +457,30 @@ nav ul li a {
   position: relative;
   overflow: hidden;
   padding-top: 60px;
+  background:
+  linear-gradient(
+    95deg , 
+    var(--color-primary) 0%,
+    var(--color-primary) 50%,
+    var(--color-third) 50%, 
+    var(--color-third) 100%
+);
 }
 
 .team-title {
   font-family: var(--font-secondary);
+  color: var(--color-third);
+  text-align: center;
+  font-size: 65px;
+  font-weight: 900;
+  margin-top: 50px;
+}
+
+.team-title span {
+  font-family: var(--font-secondary);
   color: var(--color-primary);
   text-align: center;
-  font-size: 50px;
+  font-size: 70px;
   font-weight: 900;
   margin-top: 50px;
 }
@@ -427,18 +489,19 @@ nav ul li a {
   text-align: center;
   z-index: 2;
   margin-top: 50px;
-  font-size: 55px;
-  color: var(--color-primary);
+  font-size: 65px;
+  color: var(--color-third);
+  text-shadow: 1px 1px 4px var(--color-primary), 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
+
 
 /* Background Logo */
 .bg-logo {
   position: absolute;
-  top: 30%;
-  left: 70%;
+  top: 40%;
+  left: 90%;
   transform: translate(-50%, -50%);
   opacity: 0.1;
-  z-index: 0;
   width: 200vh;
 }
 
@@ -447,13 +510,13 @@ nav ul li a {
   box-sizing: border-box;
   overflow: auto;
   position: absolute;
-  top: 55%;
+  top: 59%;
   left: 20%;
   transform: translate(-50%, -50%);
-  width: 22%;
-  height: 31vw;
+  width: 25%;
+  height: 33vw;
   padding: 25px 25px 25px 25px;
-  background-color: #f2f8fe;
+  background-color: var(--color-third);
   box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2), inset 5px 5px 10px rgba(0, 0, 0, 0.2);
   font-family: var(--font-secondary);
   color: var(--color-primary);
@@ -466,38 +529,40 @@ nav ul li a {
 
 .card2 {
   position: absolute;
-  top: 55%;
+  top: 59%;
   left: 20%;
   transform: translate(-50%, -50%);
-  width: 22%;
-  height: 31vw;
+  width: 25%;
+  height: 33vw;
   border-radius: 10px;
-  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.8);
+  box-shadow: inset 5px 5px 10px rgba(234, 230, 230, 0.2), inset -5px -5px 10px rgba(170, 163, 163, 0.2);
 }
 
 .card h2 {
-  font-size: 2em;
+  font-size: 1.7em;
   font-family: var(--font-secondary);
   font-weight: 900;
-  margin-bottom: 3px;
-  margin-top: 25px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 .card h3 {
-  font-size: 1.3em;
+  font-size: 1.1em;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   color: var(--color-primary);
 }
 
 .card p {
   font-size: 1.2em;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   font-family: var(--font-secondary);
   color: var(--color-primary);
   text-align: justify;
   padding: 0px 10px 0px 10px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.3;
 }
 
 /* Team Image in Card */
@@ -507,7 +572,7 @@ nav ul li a {
   padding-bottom: 45%;
   border-radius: 50%;
   background-size: cover;
-  background-position: center 0px;
+  background-position: center -5px;
   margin-left: auto;
   margin-right: auto;
   box-shadow: var(--color-primary) 0px 0px 10px;
@@ -518,7 +583,7 @@ nav ul li a {
   display: flex;
   justify-content: center;
   gap: 10%;
-  margin-top: 50px;
+  margin-top: 42px;
 }
 
 .social-icons i {
@@ -547,7 +612,7 @@ nav ul li a {
   display: flex;
   float: right;
   width: 67%;
-  height: 75vh;
+  height: 70vh;
   margin: 15px 0px 0px 0px;
   overflow: hidden;
 }
@@ -560,7 +625,7 @@ nav ul li a {
   padding-bottom: 12%;
   border-radius: 50%;
   background-size: cover;
-  background-position: center 0px;
+  background-position: center -5px;
   animation: none;
   border: 1px solid var(--color-primary);
 }
@@ -612,6 +677,14 @@ nav ul li a {
   text-align: center;
   position: relative;
   overflow: hidden;
+  background:
+  linear-gradient(
+    85deg , 
+    var(--color-primary) 0%,
+    var(--color-primary) 50%,
+    var(--color-third) 50%, 
+    var(--color-third) 100%
+);
 }
 
 /* Partenaire Titles */
@@ -625,12 +698,16 @@ nav ul li a {
 #partenaire h2 {
   font-family: var(--font-secondary);
   font-size: 5.6vw;
+  color: var(--color-third);
+  text-shadow: 1px 1px 4px var(--color-primary), 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 #partenaire h3 {
-  font-size: 30px;
+  font-size: 40px;
   z-index: 2;
   margin-bottom: 100px;
+  color: var(--color-third);
+  text-shadow: 1px 1px 4px var(--color-primary), 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 /* Partenaire Title Line */
@@ -664,19 +741,29 @@ nav ul li a {
   align-items: center;
   width: 13%;
   height: 14vw;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px var(--color-primary);
   margin: 3vw;
   border-radius: 2vw;
   cursor: pointer;
   padding: 1vw 2vw;
-  background-color: transparent;
+  background-color: #ffffff;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.item-partner2 {
+  box-shadow: 0 0 15px var(--color-third);
 }
 
 .item-partner:hover {
   transform: scale(1.1);
   box-shadow: 0 0 20px var(--color-primary);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #ffffff;
+}
+
+.item-partner2:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px var(--color-third);
+  background-color: #ffffff;
 }
 
 /* Partner Item Background */
@@ -703,24 +790,35 @@ nav ul li a {
   z-index: 10;
 }
 
+
 /* Collaboration Quote and paragraph */
 .quote {
   font-family: var(--font-secondary);
-  color: var(--color-primary);
-  font-size: 28px;
+  color: var(--color-third);
+  font-size: 33px;
   max-width: 1000px;
   margin: 100px auto 0;
   line-height: 1.6;
   position: relative;
   padding: 50px;
+  text-shadow: 1px 1px 4px var(--color-primary), 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-.quote::before, .quote::after {
+.quote::before {
+  content: "“";
+  font-size: 100px;
+  position: absolute;
+  color: var(--color-third);
+  z-index: 1;
+  opacity: 0.1;
+}
+
+.quote::after {
   content: "“";
   font-size: 100px;
   position: absolute;
   color: var(--color-primary);
-  z-index: -1;
+  z-index: 1;
   opacity: 0.1;
 }
 
@@ -749,7 +847,7 @@ nav ul li a {
 .scroll-arrow-part a {
   display: block;
   font-size: 44px;
-  color: var(--color-primary);
+  color: var(--color-third);
   transition: all 0.3s ease;
 }
 
@@ -757,6 +855,30 @@ nav ul li a {
   color: var(--color-arrow);
 }
 
+/***************************************************************************************
+*********************************  PORTFOLIO SECTION  **********************************
+***************************************************************************************/
+
+
+/* Scroll Arrow */
+.scroll-arrow-port {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+}
+
+.scroll-arrow-port a {
+  display: block;
+  font-size: 44px;
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.scroll-arrow-port a:hover {
+  color: var(--color-arrow);
+}
 
 /***************************************************************************************
 **********************************  SERVICES SECTION ***********************************
@@ -767,19 +889,27 @@ nav ul li a {
   position: relative;
   padding: 60px;
   overflow: hidden;
+  background:
+  linear-gradient(
+    80deg , 
+    var(--color-primary) 0%,
+    var(--color-primary) 53vw,
+    var(--color-third) 53vw, 
+    var(--color-third) 100%
+);
 }
 
 /* Section Title & Logo */
 .section_title h2 {
   font-family: var(--font-secondary);
-  color: var(--color-primary);
-  font-size: 50px;
+  color: var(--color-third);
+  font-size: 80px;
   font-weight: 700;
   letter-spacing: 1.8px;
-  margin-bottom: 40px;
+  margin-bottom: 4px;
   margin-top: 20px;
   text-align: center;
-
+  text-shadow: 1px 1px 4px var(--color-primary), 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .brand_border {
@@ -788,7 +918,14 @@ nav ul li a {
   justify-content: center;
 }
 
-.brand_border .left-line,
+.brand_border .left-line {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 30%;
+  background: var(--color-third);
+}
+
 .brand_border .right-line {
   content: "";
   display: block;
@@ -798,18 +935,20 @@ nav ul li a {
 }
 
 .logo-service {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
+
 }
 
 .section_title p {
-  color: var(--color-secondary);
+  color: var(--color-third);
   font-family: var(--font-secondary);
-  font-size: 1.6em;
+  font-size: 1.9em;
   line-height: 1.3em;
-  padding: 54px 19%;
+  padding: 5px 15%;
   text-align: justify;
   margin-top: 10px;
+  text-shadow: 1px 1px 5px var(--color-primary), 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 /* Service Cards */
@@ -817,14 +956,14 @@ nav ul li a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 90px;
 }
 
 .service {
   margin: 20px 30px;
   overflow: hidden;
-  background-color: rgb(245, 245, 239);
-  padding: 35px 15px 100px 15px;
+  background-color: var(--color-third);
+  padding: 35px 15px 70px 15px;
   position: relative;
   text-align: center;
   transition: background-color 0.3s ease-in,
@@ -843,7 +982,7 @@ nav ul li a {
 .service:hover {
   background-color: var(--color-primary);
   transform: translateY(-10px) rotate(0deg);
-  border: none;
+  border: 3px solid var(--color-third);
 }
 
 .service:hover::before {
@@ -862,7 +1001,7 @@ nav ul li a {
 .service > .title-card {
   font-family: var(--font-secondary);
   font-weight: 900;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 1.56rem;
   margin-bottom: 2.5rem;
   text-transform: capitalize;
@@ -871,9 +1010,8 @@ nav ul li a {
 
 .service > .description {
   font-family: var(--font-secondary);
-  text-align: justify;
-  font-size: 1.2rem;
-  line-height: 1.56rem;
+  font-size: 1.4rem;
+  line-height: 1.5;
   margin: 0;
   transition: color 0.3s ease-out;
 }
@@ -881,7 +1019,7 @@ nav ul li a {
 .service:hover > i,
 .service:hover > .title-card,
 .service:hover > .description {
-  color: #FFF;
+  color: var(--color-third);
 }
 
 /* Scroll Arrow */
@@ -895,7 +1033,7 @@ nav ul li a {
 
 .scroll-arrow-services a {
   font-size: 44px;
-  color: var(--color-primary);
+  color: var(--color-third);
   transition: color 0.3s;
 }
 
@@ -915,6 +1053,14 @@ nav ul li a {
   display: flex;
   align-items: center;
   padding: 0 5%;
+  background:
+  linear-gradient(
+    95deg , 
+    var(--color-primary) 0%,
+    var(--color-primary) 53.6vw,
+    var(--color-third) 53.6vw, 
+    var(--color-third) 100%
+);
 }
 
 /* Content Wrapper */
@@ -944,6 +1090,7 @@ nav ul li a {
 /* Title */
 .left-content h1 {
   font-family: var(--font-secondary);
+  color: var(--color-third);
   font-size: 3em;
   font-weight: 600;
   max-width: 90%;
@@ -962,10 +1109,10 @@ nav ul li a {
 
 .button-container .button {
   background-color: transparent;
-  border: 1px dashed var(--color-primary);
+  border: 1px dashed var(--color-third);
   padding: 15px 25px;
   text-align: center;
-  color: var(--color-primary);
+  color: var(--color-third);
   cursor: pointer;
   transition: all 0.3s;
   font-size: 1.5em;
@@ -974,8 +1121,8 @@ nav ul li a {
 
 .button-container .button.active,
 .button:hover {
-  background-color: var(--color-primary);
-  color: white;
+  background-color: var(--color-third);
+  color: var(--color-primary);
 }
 
 /* === RIGHT CONTENT === */

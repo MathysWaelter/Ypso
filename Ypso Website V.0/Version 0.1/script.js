@@ -228,11 +228,12 @@ function toggleButton(buttonId) {
   hiddenInput.value = clickedButton.innerText;
 }
 
+// Validation du formulaire
 function validateForm() {
   const userChoice = document.getElementById('userChoice').value;
   if (!userChoice) {
       alert('Veuillez sélectionner le projet a développer avant de soumettre le formulaire.');
-      return false; // Empêche la soumission du formulaire
+      return false;
   }
-  return true; // Autorise la soumission du formulaire
+  return true;
 }
