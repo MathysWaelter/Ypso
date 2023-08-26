@@ -194,21 +194,6 @@ nav ul li a {
   left: 0px;
 }
 
-.roundshape{
-  width: 300px;
-  height: 300px;
-  background-color: rgba(12, 52, 148, 0.8);
-  position: absolute;
-  left: 92%;
-  bottom: 85%;
-  border-radius: 50%;
-  transition: background-color 1s ease-out;
-}
-
-.roundshape:hover {
-  background-color: var(--color-primary);
-}
-
 #home .title-home {
   display: flex;
   flex-direction: column;
@@ -447,6 +432,168 @@ nav ul li a {
 
 
 /***************************************************************************************
+**********************************  SERVICES SECTION ***********************************
+***************************************************************************************/
+
+/* Services Main Container */
+#services {
+  position: relative;
+  padding: 60px;
+  overflow: hidden;
+  background:
+  linear-gradient(
+    95deg , 
+    var(--color-primary) 0,
+    var(--color-primary) 50%,
+    var(--color-third) 50%, 
+    var(--color-third) 100%
+);
+}
+
+/* Section Title & Logo */
+.section_title h2 {
+  font-family: var(--font-secondary);
+  color: var(--color-third);
+  font-size: 80px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  margin-bottom: 4px;
+  margin-top: 20px;
+  text-align: center;
+  text-shadow: 1px 1px 4px var(--color-primary), 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.brand_border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand_border .left-line {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 30%;
+  background: var(--color-third);
+}
+
+.brand_border .right-line {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 30%;
+  background: var(--color-primary);
+}
+
+.logo-service {
+  width: 200px;
+  height: 200px;
+
+}
+
+.section_title p {
+  color: var(--color-third);
+  font-family: var(--font-secondary);
+  font-size: 1.9em;
+  line-height: 1.3em;
+  padding: 5px 15%;
+  text-align: justify;
+  margin-top: 10px;
+  text-shadow: 1px 1px 5px var(--color-primary), 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Service Cards */
+.services-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 90px;
+}
+
+.service {
+  margin: 20px 30px;
+  overflow: hidden;
+  background-color: var(--color-third);
+  padding: 35px 15px 70px 15px;
+  position: relative;
+  text-align: center;
+  transition: background-color 0.3s ease-in,
+              transform .3s ease-in;
+  width: 300px;
+  border: 3px solid var(--color-primary);
+  transform: rotate(-5deg);
+  border-radius: 10px;
+}
+
+/* Service style in even-numbered position for reverse rotation */
+.service:nth-child(even) {
+  transform: rotate(5deg);
+}
+
+.service:hover {
+  background-color: var(--color-primary);
+  transform: translateY(-10px) rotate(0deg);
+  border: 3px solid var(--color-third);
+}
+
+.service:hover::before {
+  right: 0;
+  top: 0;
+}
+
+.service > i {
+  display: block;
+  color: var(--color-primary);
+  font-size: 4rem;
+  margin-bottom: 0.9rem;
+  transition: color 0.3s ease-out;
+}
+
+.service > .title-card {
+  font-family: var(--font-secondary);
+  font-weight: 900;
+  font-size: 1.5rem;
+  line-height: 1.56rem;
+  margin-bottom: 2.5rem;
+  text-transform: capitalize;
+  transition: color 0.3s ease-out;
+}
+
+.service > .description {
+  font-family: var(--font-secondary);
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin: 0;
+  transition: color 0.3s ease-out;
+}
+
+.service:hover > i,
+.service:hover > .title-card,
+.service:hover > .description {
+  color: var(--color-third);
+}
+
+/* Scroll Arrow */
+.scroll-arrow-services {
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.scroll-arrow-services a {
+  font-size: 44px;
+  color: var(--color-primary);
+  transition: color 0.3s;
+}
+
+.scroll-arrow-services a:hover {
+  color: var(--color-arrow);
+}
+
+
+/***************************************************************************************
 ***********************************  TEAM SECTION  *************************************
 ***************************************************************************************/
 
@@ -457,7 +604,7 @@ nav ul li a {
   padding-top: 60px;
   background:
   linear-gradient(
-    95deg , 
+    85deg , 
     var(--color-primary) 0%,
     var(--color-primary) 50%,
     var(--color-third) 50%, 
@@ -472,15 +619,7 @@ nav ul li a {
   font-size: 65px;
   font-weight: 900;
   margin-top: 50px;
-}
-
-.team-title span {
-  font-family: var(--font-secondary);
-  color: var(--color-primary);
-  text-align: center;
-  font-size: 70px;
-  font-weight: 900;
-  margin-top: 50px;
+  text-shadow: 1px 1px 4px var(--color-primary), 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .team-title2 {
@@ -656,7 +795,7 @@ nav ul li a {
 .scroll-arrow-team a {
   display: block;
   font-size: 44px;
-  color: var(--color-primary);
+  color: var(--color-third);
   transition: all 0.3s ease;
 }
 
@@ -677,7 +816,7 @@ nav ul li a {
   overflow: hidden;
   background:
   linear-gradient(
-    85deg , 
+    95deg , 
     var(--color-primary) 0%,
     var(--color-primary) 50%,
     var(--color-third) 50%, 
@@ -845,7 +984,7 @@ nav ul li a {
 .scroll-arrow-part a {
   display: block;
   font-size: 44px;
-  color: var(--color-third);
+  color: var(--color-primary);
   transition: all 0.3s ease;
 }
 
@@ -867,7 +1006,7 @@ nav ul li a {
   position: relative;
   background:
   linear-gradient(
-    95deg , 
+    85deg , 
     var(--color-primary) 0,
     var(--color-primary) 50%,
     var(--color-third) 50%, 
@@ -1073,173 +1212,11 @@ nav ul li a {
 .scroll-arrow-portfolio a {
   display: block;
   font-size: 44px;
-  color: var(--color-primary);
+  color: var(--color-third);
   transition: all 0.3s ease;
 }
 
 .scroll-arrow-portfolio a:hover {
-  color: var(--color-arrow);
-}
-
-
-/***************************************************************************************
-**********************************  SERVICES SECTION ***********************************
-***************************************************************************************/
-
-/* Services Main Container */
-#services {
-  position: relative;
-  padding: 60px;
-  overflow: hidden;
-  background:
-  linear-gradient(
-    85deg , 
-    var(--color-primary) 0,
-    var(--color-primary) 50%,
-    var(--color-third) 50%, 
-    var(--color-third) 100%
-);
-}
-
-/* Section Title & Logo */
-.section_title h2 {
-  font-family: var(--font-secondary);
-  color: var(--color-third);
-  font-size: 80px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-  margin-bottom: 4px;
-  margin-top: 20px;
-  text-align: center;
-  text-shadow: 1px 1px 4px var(--color-primary), 1px 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-.brand_border {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.brand_border .left-line {
-  content: "";
-  display: block;
-  height: 3px;
-  width: 30%;
-  background: var(--color-third);
-}
-
-.brand_border .right-line {
-  content: "";
-  display: block;
-  height: 3px;
-  width: 30%;
-  background: var(--color-primary);
-}
-
-.logo-service {
-  width: 200px;
-  height: 200px;
-
-}
-
-.section_title p {
-  color: var(--color-third);
-  font-family: var(--font-secondary);
-  font-size: 1.9em;
-  line-height: 1.3em;
-  padding: 5px 15%;
-  text-align: justify;
-  margin-top: 10px;
-  text-shadow: 1px 1px 5px var(--color-primary), 1px 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-/* Service Cards */
-.services-card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 90px;
-}
-
-.service {
-  margin: 20px 30px;
-  overflow: hidden;
-  background-color: var(--color-third);
-  padding: 35px 15px 70px 15px;
-  position: relative;
-  text-align: center;
-  transition: background-color 0.3s ease-in,
-              transform .3s ease-in;
-  width: 300px;
-  border: 3px solid var(--color-primary);
-  transform: rotate(-5deg);
-  border-radius: 10px;
-}
-
-/* Service style in even-numbered position for reverse rotation */
-.service:nth-child(even) {
-  transform: rotate(5deg);
-}
-
-.service:hover {
-  background-color: var(--color-primary);
-  transform: translateY(-10px) rotate(0deg);
-  border: 3px solid var(--color-third);
-}
-
-.service:hover::before {
-  right: 0;
-  top: 0;
-}
-
-.service > i {
-  display: block;
-  color: var(--color-primary);
-  font-size: 4rem;
-  margin-bottom: 0.9rem;
-  transition: color 0.3s ease-out;
-}
-
-.service > .title-card {
-  font-family: var(--font-secondary);
-  font-weight: 900;
-  font-size: 1.5rem;
-  line-height: 1.56rem;
-  margin-bottom: 2.5rem;
-  text-transform: capitalize;
-  transition: color 0.3s ease-out;
-}
-
-.service > .description {
-  font-family: var(--font-secondary);
-  font-size: 1.4rem;
-  line-height: 1.5;
-  margin: 0;
-  transition: color 0.3s ease-out;
-}
-
-.service:hover > i,
-.service:hover > .title-card,
-.service:hover > .description {
-  color: var(--color-third);
-}
-
-/* Scroll Arrow */
-.scroll-arrow-services {
-  position: absolute;
-  bottom: 1%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-.scroll-arrow-services a {
-  font-size: 44px;
-  color: var(--color-third);
-  transition: color 0.3s;
-}
-
-.scroll-arrow-services a:hover {
   color: var(--color-arrow);
 }
 
