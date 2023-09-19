@@ -64,149 +64,72 @@ document.addEventListener("DOMContentLoaded", function () {
  ***************************************************************************************/
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Sélection des éléments nécessaires
+
+  // Récupération des éléments nécessaires du DOM
   const bubbles = document.querySelectorAll(".bubble");
   const mainCard = document.getElementById("mainCard");
   const closeButton = document.querySelector(".close-btn");
-  let lastClickedBubble = null;
 
-  // Initialisation des données pour les bulles
-  const bubblesData = [];
-  // Calcul des limites maximales pour la position des bulles
-  const bubbleContainer = document.querySelector(".bubble-container");
-  const maxX = bubbleContainer.clientWidth - bubbles[0].offsetWidth;
-  const maxY = bubbleContainer.clientHeight - bubbles[0].offsetHeight;
+  // Calcul des limites maximales pour le placement des bulles
+  const maxX = document.querySelector(".bubble-container").clientWidth - bubbles[0].offsetWidth;
+  const maxY = document.querySelector(".bubble-container").clientHeight - bubbles[0].offsetHeight;
+  const margin = 5;
+  let lastClickedBubble = null;
 
   // Fonction pour vérifier si deux bulles se chevauchent
   function isOverlapping(bubble1, bubble2) {
-    const dx = bubble1.x - bubble2.x;
-    const dy = bubble1.y - bubble2.y;
-    const distance = Math.sqrt(dx * dx + dy * dy);
-    return distance < bubble1.element.offsetWidth;
+      return Math.hypot(bubble1.x - bubble2.x, bubble1.y - bubble2.y) < bubble1.element.offsetWidth + margin;
   }
 
-  // Initialisation des positions des bulles sans chevauchement
-  bubbles.forEach((bubble) => {
-    let position;
-    do {
-      position = {
-        x: Math.random() * maxX,
-        y: Math.random() * maxY,
-        dx: (Math.random() - 0.5) * 4,
-        dy: (Math.random() - 0.5) * 4,
-        element: bubble,
-        isHovered: false,
-      };
-    } while (bubblesData.some((b) => isOverlapping(b, position)));
-    bubblesData.push(position);
+  // Fonction pour positionner une bulle de manière aléatoire
+  function positionBubble(bubble) {
+      let position;
+      do {
+          position = {
+              x: Math.random() * maxX,
+              y: Math.random() * maxY,
+              element: bubble
+          };
+      } while (Array.from(bubbles).some(b => b !== bubble && isOverlapping(position, b.dataset)));
+
+      // Applique la position calculée à la bulle
+      bubble.style.transform = `translate(${position.x}px, ${position.y}px)`;
+      bubble.dataset.x = position.x;
+      bubble.dataset.y = position.y;
+  }
+
+  // Positionne chaque bulle et écoute l'événement de clic
+  bubbles.forEach(bubble => {
+      positionBubble(bubble);
+      bubble.addEventListener("click", function () {
+          if (lastClickedBubble) {
+              lastClickedBubble.style.opacity = 1;
+          }
+
+          // Mise à jour de la carte principale avec les données de la bulle cliquée
+          const attributes = this.dataset;
+          mainCard.querySelector(".img-team").style.backgroundImage = `url(${attributes.image})`;
+          mainCard.querySelector("h2").textContent = attributes.name;
+          mainCard.querySelector("h3").textContent = attributes.role;
+          mainCard.querySelector("p").textContent = attributes.description;
+          mainCard.querySelector('.social-icons a[href*="github.com"]').href = attributes.github;
+          mainCard.querySelector('.social-icons a[href*="linkedin.com"]').href = attributes.linkedin;
+
+          mainCard.style.display = "block";
+          this.style.opacity = 0;
+          lastClickedBubble = this;
+      });
   });
 
-  // Gestion des collisions entre bulles
-  function handleCollision(bubble1, bubble2) {
-    const angle = Math.atan2(bubble2.y - bubble1.y, bubble2.x - bubble1.x);
-    bubble2.dx = Math.cos(angle);
-    bubble2.dy = Math.sin(angle);
-    bubble1.dx = -Math.cos(angle);
-    bubble1.dy = -Math.sin(angle);
-  }
-
-  // Mise à jour de la position des bulles
-  function updateBubblePosition(bubbleData) {
-    if (!bubbleData.isHovered) {
-      bubbleData.x += bubbleData.dx;
-      bubbleData.y += bubbleData.dy;
-
-      // Vérification des limites de l'écran
-      if (bubbleData.x < 0 || bubbleData.x > maxX) {
-        bubbleData.dx = -bubbleData.dx;
-      }
-
-      if (bubbleData.y < 0 || bubbleData.y > maxY) {
-        bubbleData.dy = -bubbleData.dy;
-      }
-    }
-
-    // Vérification des collisions avec les autres bulles
-    for (let otherBubble of bubblesData) {
-      if (
-        otherBubble !== bubbleData &&
-        isOverlapping(bubbleData, otherBubble)
-      ) {
-        handleCollision(bubbleData, otherBubble);
-      }
-    }
-
-    // Mise à jour de la position de l'élément DOM
-    bubbleData.element.style.transform = `translate(${bubbleData.x}px, ${bubbleData.y}px)`;
-  }
-
-  // Réinitialisation de la dernière bulle cliquée
-  function resetLastClickedBubble() {
-    if (lastClickedBubble) {
-      lastClickedBubble.style.transition = "opacity 5s";
-      lastClickedBubble.style.opacity = 1;
-    }
-  }
-
-  // Gestion des événements pour chaque bulle
-  bubbles.forEach((bubble) => {
-    bubble.addEventListener("mouseover", function () {
-      const bubbleData = bubblesData.find((b) => b.element === this);
-      bubbleData.isHovered = true;
-    });
-
-    bubble.addEventListener("mouseout", function () {
-      const bubbleData = bubblesData.find((b) => b.element === this);
-      bubbleData.isHovered = false;
-    });
-
-    bubble.addEventListener("click", function () {
-      if (lastClickedBubble) {
-        resetLastClickedBubble();
-      }
-
-      // Récupération des données de la bulle cliquée
-      const memberImage = this.getAttribute("data-image");
-      const memberName = this.getAttribute("data-name");
-      const memberRole = this.getAttribute("data-role");
-      const memberDescription = this.getAttribute("data-description");
-      const githubURL = this.getAttribute("data-github");
-      const linkedinURL = this.getAttribute("data-linkedin");
-
-      // Mise à jour de la carte principale avec les données de la bulle cliquée
-      mainCard.querySelector(
-        ".img-team"
-      ).style.backgroundImage = `url(${memberImage})`;
-      mainCard.querySelector("h2").textContent = memberName;
-      mainCard.querySelector("h3").textContent = memberRole;
-      mainCard.querySelector("p").textContent = memberDescription;
-      mainCard.querySelector('.social-icons a[href*="github.com"]').href =
-        githubURL;
-      mainCard.querySelector('.social-icons a[href*="linkedin.com"]').href =
-        linkedinURL;
-
-      mainCard.style.display = "block";
-
-      this.style.transition = "opacity 1s";
-      this.style.opacity = 0;
-      lastClickedBubble = this;
-    });
-  });
-
-  // Gestion de l'événement de fermeture de la carte principale
+  // Écoute l'événement de clic sur le bouton de fermeture
   closeButton.addEventListener("click", function () {
-    mainCard.style.display = "none";
-    resetLastClickedBubble();
+      mainCard.style.display = "none";
+      if (lastClickedBubble) {
+          lastClickedBubble.style.opacity = 1;
+      }
   });
-
-  // Animation des bulles
-  function animateBubbles() {
-    bubblesData.forEach(updateBubblePosition);
-    requestAnimationFrame(animateBubbles);
-  }
-
-  animateBubbles();
 });
+
 
 /***************************************************************************************
  ******************************  PORTFOLIO: SLIDER ********************************
