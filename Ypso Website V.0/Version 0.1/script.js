@@ -3,15 +3,16 @@
  ***************************************************************************************/
 
  function detectScroll(event) {
+    console.log(event.deltaY);
   if (event.deltaY > 0) {
-    const currentSection = getCurrentSection();
-    const nextSection = currentSection.nextElementSibling;
+    let currentSection = getCurrentSection();
+    let nextSection = currentSection.nextElementSibling;
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: "smooth" });
     }
   } else {
-    const currentSection = getCurrentSection();
-    const previousSection = currentSection.previousElementSibling;
+    let currentSection = getCurrentSection();
+    let previousSection = currentSection.previousElementSibling;
     if (previousSection) {
       previousSection.scrollIntoView({ behavior: "smooth" });
     }

@@ -13,6 +13,9 @@
 
     <!-- Linking to the main JavaScript file -->
     <script src="./script.js"></script>
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+
+
 
     <!-- Website title and Website favicon -->
     <title>YPSO</title>
@@ -673,43 +676,45 @@
 
           <!-- Form that sends an email with contact details -->
           <form
-            action="#"
-            method="post"
-            enctype="text/plain"
-            onsubmit="return validateForm();"
-          >
-            <!-- Hidden field to store the user's project choice -->
-            <input type="hidden" id="userChoice" name="userChoice" />
+  action="http://localhost:3000/api/contact/create"
+  method="POST"
+>
+  <!-- Hidden field to store the user's project choice -->
+  <input type="hidden" id="userChoice" required name="userChoice" />
 
-            <!-- Field for the first name -->
-            <div class="input-group">
-              <label for="prenom">Prénom</label>
-              <input type="text" id="prenom" name="prenom" required />
-            </div>
 
-            <!-- Field for the name -->
-            <div class="input-group">
-              <label for="nom">Nom</label>
-              <input type="text" id="nom" name="nom" required />
-            </div>
+  <!-- Field for the first name -->
+  <div class="input-group">
+    <label for="prenom">Prénom</label>
+    <input type="text" id="prenom" name="prenom" required />
+  </div>
 
-            <!-- Field for the email -->
-            <div class="input-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required />
-            </div>
+  <!-- Field for the name -->
+  <div class="input-group">
+    <label for="nom">Nom</label>
+    <input type="text" id="nom" name="nom" required />
+  </div>
 
-            <!-- Field for the message -->
-            <div class="input-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" required></textarea>
-            </div>
+  <!-- Field for the email -->
+  <div class="input-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required />
+  </div>
 
-            <!-- Button to submit the form -->
-            <div class="submit-container">
-              <button type="submit">Envoyer</button>
-            </div>
-          </form>
+  <!-- Field for the message -->
+  <div class="input-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required></textarea>
+  </div>
+
+  <div class="h-captcha" data-sitekey="8fa1ab2f-ad7b-44fa-845e-c11b12de7fc9"></div>
+
+  <!-- Button to submit the form -->
+  <div class="submit-container">
+    <button type="submit" value="Envoyer">Envoyer</button>
+  </div>
+</form>
+
         </div>
       </div>
     </section>

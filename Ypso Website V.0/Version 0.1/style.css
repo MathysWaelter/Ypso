@@ -44,7 +44,7 @@ body {
   padding: 0;
   font-family: var(--font-primary);
   background: linear-gradient(125deg, #e6f7ff 25%, #ffffff 50%, #e6f7ff 75%);
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 section {
@@ -1523,3 +1523,8 @@ footer_social-icons a:visited{
   padding-top: 0px;
   border-top: 1px solid var(var(--color-third));
 }
+
+.g-recaptcha {
+    display: block;
+    margin: 100px; /* Adjust the margin as needed for spacing */
+  }
